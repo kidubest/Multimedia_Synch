@@ -16,7 +16,7 @@ std::string max_freq (kiss_fft_cpx out[]);
 void fft(char * buffer);
 void  put_to_array ( int* array);
 void max (int array[], int out[], int size);
-char* loadWAV(const char* fn, int & size);
+char* loadWAV(  char const* fn, int & size);
 void mono_to_stereo (char *data, int size,FILE * file);
 //void mono_to_stereo_main (char *data, int size);
 int most_occuring(int array[], int size);

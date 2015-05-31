@@ -1,6 +1,9 @@
 //#include "fft.h"
 #include <sstream>
 #include "func_engine.h"
+
+
+
 using namespace std ;
 
 /*
@@ -10,8 +13,12 @@ using namespace std ;
 
 */
 
-kiss_fft_cpx in[N];
+        kiss_fft_cpx in[N];
         kiss_fft_cpx out[N];
+        //extern QString file_main;
+        //extern QString file_ref ;
+
+
 	ifstream offset_read_2 ("offset", ios::in);
 
     /*
@@ -92,6 +99,9 @@ int temp=0, tempCount, count=1;
             }
         }
     }
+        //qDebug () << file_main <<endl;
+       cout << "we are here";
+
         return popular;
 }
 
@@ -187,7 +197,7 @@ fwrite( buffer, 1, 2, file);
 
 */
 
-char* loadWAV(const char* fn /*, int& chan, int& samplerate, int& bps*/, int& size){
+char* loadWAV(char const* fn /*, int& chan, int& samplerate, int& bps*/, int& size){
 
         char buffer[4];
         ifstream in(fn, ios::binary);

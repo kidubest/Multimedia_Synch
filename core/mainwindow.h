@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "assemble_all.h"
+#include <QDebug>
 
 namespace Ui {
 class MainWindow;
@@ -24,10 +25,17 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+
+    void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
 
-void out ();
+void out_ ();
 void delay( int millisecondsToWait );
 #endif // MAINWINDOW_H

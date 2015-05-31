@@ -8,6 +8,9 @@
 #include <sstream>
 #include <map>
 #include "func_engine.h"
+//#include "mainwindow.h"
+
+//#include <QString>
 
 using namespace std;
 
@@ -17,6 +20,11 @@ using namespace std;
 
 extern	kiss_fft_cpx in[N];
 extern  kiss_fft_cpx out[N];
+//extern  std::string path1 ;
+//extern  std::string path2 ;
+
+//const char * path1_ = path1.c_str();
+//const char * path2_ = path2.c_str();
 
 /*
     This function is the heart of the program. Here is where everything is put together... What is referred to as "Main file" in the
@@ -33,17 +41,37 @@ string run_all(void)
     string str ="";
     int time = 0 ;
     int offset_num =0;
-    string line;
+   string line;
+   string ref_path;
+   string main_path;
+
+
     float popular ;
     int size_main;
     int size_ref;
 
+  //  string file_main_str = file_main.toUtf8().constData();
+    //string file_ref_str = file_ref.toUtf8().constData();
+
+
     FILE* file_main = fopen( "temp_main", "wb" ); // file to write the mono output of the main file
     FILE* file2 = fopen( "temp_ref", "wb" );      // file to write the mono output of the reference file
 
-    char* ptr = loadWAV("/home/bk/Desktop/Zigzan_69.wav", size_main); // ptr to raw audio data of main file
+    ifstream path_main_read ("main", ios::in);
+    ifstream path_ref_read ("ref", ios::in);
 
-    char* ptr_ref = loadWAV("/home/bk/Desktop/Zigzan.wav", size_ref); // ptr to raw audio data of reference file
+    getline(path_main_read, main_path);
+    getline(path_ref_read, ref_path);
+
+    char const * main_ptr = main_path.c_str();
+    char const * ref_ptr = ref_path.c_str();
+
+//     while (getline(path_ref_read, path_ref))
+
+
+    char* ptr = loadWAV(ref_ptr, size_main); // ptr to raw audio data of main file
+
+    char* ptr_ref = loadWAV(main_ptr, size_ref); // ptr to raw audio data of reference file
 
     mono_to_stereo(ptr_ref, size_ref,file_main); // change the main stereo file into mono and write data to file pointed by file_main
     mono_to_stereo(ptr, size_main, file2);       // change reference stereo file into mono and write data to file pointed by file2
