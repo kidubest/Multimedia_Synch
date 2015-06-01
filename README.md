@@ -1,5 +1,5 @@
 # Multimedia_Synch
-A software to simply calculate the delay between two correalted Multimedai contents and align them accordingly.
+A software to simply calculate the delay between two correlated Multimedai contents and align them accordingly.
 
 Pre-requisites on Linux or Mac 
 
