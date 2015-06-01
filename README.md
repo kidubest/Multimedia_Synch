@@ -7,7 +7,7 @@ build-dep, libqt4-dev, libxcb1 libxcb1-dev libx11-xcb1 libx11-xcb-dev libxcb-key
 
 After installation you can clone the source code with
 
-    git clone https://github.com/biruk-belayMultimedia_Synch
+    git clone https://github.com/biruk-belay/Multimedia_Synch
     
 The .pro file should be opened with qtcreator
 
